@@ -78,6 +78,10 @@ where
         }
     }
 
+    pub fn get_stream(self) -> MaybeTlsStream<S, T> {
+        self.stream.into_inner()
+    }
+
     fn poll_response(
         &mut self,
         cx: &mut Context<'_>,
